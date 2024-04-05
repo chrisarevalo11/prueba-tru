@@ -18,7 +18,7 @@ The faucet contract implemented in this repository allows users to request TRU t
 
 ## Figma Design:
 
-You can find the design for the web interface on Figma [here]([https://www.figma.com](https://www.figma.com/file/PeklZDFyedihM5vL0XnRLA/Prueba-tru?type=design&node-id=2%3A2&mode=design&t=e7AgmcUqbL9AYVbD-1)).
+You can find the design for the web interface on Figma [here](https://www.figma.com/file/PeklZDFyedihM5vL0XnRLA/Prueba-tru?type=design&node-id=2%3A2&mode=design&t=e7AgmcUqbL9AYVbD-1).
 
 ## To run the project
 
