@@ -13,12 +13,15 @@ export default function FaucetCard(): JSX.Element {
         signer
     )
 
-    const mintTokens = async () => {
+    const faucet = async () => {
         console.log(contract)
         try {
             setIsLoading(true);
-            const tx = await contract.mintTokens()
-            await tx.wait()
+            const tx = await contract.mintTokens();
+            console.log('Transaction submitted:', tx.hash);
+
+            const receipt = await tx.wait();
+            console.log('Transaction confirmed:', receipt);
             setIsLoading(false);
         } catch (error) {
             setIsLoading(false);
@@ -35,7 +38,7 @@ export default function FaucetCard(): JSX.Element {
                 connectionStatus === "connected" ? (
                     <div className="flex flex-col justify-center items-center gap-3">
                         <p>Now get the TRU test tokens deposited to your wallet!</p>
-                        <button className={`bg-accentPurple py-2 px-4 rounded-lg text-white font-bold ${isLoading ? "opacity-60 pointer-events-none" : "opacity-100"}`} onClick={mintTokens}>{isLoading ? "Loading..." : "Get Tokens"}</button>
+                        <button className={`bg-accentPurple py-2 px-4 rounded-lg text-white font-bold ${isLoading ? "opacity-60 pointer-events-none" : "opacity-100"}`} onClick={faucet}>{isLoading ? "Loading..." : "Get Tokens"}</button>
                     </div>
                 ) : (
                     <div className="flex flex-col justify-center items-center gap-3">
